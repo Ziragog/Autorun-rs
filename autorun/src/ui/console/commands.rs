@@ -129,7 +129,7 @@ pub fn list<'a>() -> HashMap<&'a str, Command<'a>> {
 
 	#[cfg(executor)]
 	commands.insert(
-		"lua_openscript_cl",
+		"lua_cl",
 		command!("Opens a lua script from the menu", |_, mut args, _| {
 			if let Some(rawpath) = args.next() {
 				let mut path = std::path::PathBuf::from(rawpath);
@@ -146,7 +146,7 @@ pub fn list<'a>() -> HashMap<&'a str, Command<'a>> {
 				printcol!(
 					CYAN,
 					"Usage: {} {}",
-					formatcol!(YELLOW, "lua_openscript_cl"),
+					formatcol!(YELLOW, "lua_cl"),
 					formatcol!(BRIGHT_GREEN, "<script_path>")
 				);
 			}
